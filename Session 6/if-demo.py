@@ -46,15 +46,16 @@
 # b = 3
 # c = 6
 # compare(a,b)
-# def cigar_party(cigars, is_weekend):
-#   if is_weekend and cigars >= 40:
-#     return True
-#   else:
-#     if 40 <= int(cigars) <= 60:
-#       return True
-#     else:
-#       return False
-# print(cigar_party(30, True))
+def cigar_party(cigars, is_weekend):
+  if is_weekend and cigars >= 40:
+    return True
+  else:
+    return 40 <= cigars <= 60 
+    if 40 <= int(cigars) <= 60:
+      return True
+    else:
+      return False
+print(cigar_party(30, True))
 
 # def countdown(n):
 #     if n <= 0:
