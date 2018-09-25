@@ -83,3 +83,17 @@ def move(x,y,step,angle) :
     return nx, ny
 x,y = move(100,100,60,math.pi/6)
 print(x,y)
+
+def pl():
+    print("lalala")
+    print("hahaha")
+type(pl)
+
+import math
+def move(x, y, step, angle):
+    x = x + step * math.cos(angle)
+    y = y - step * math.sin(angle)
+    return x, y
+
+x, y = move(100, 100, 60, math.pi / 6)
+print(x, y)
