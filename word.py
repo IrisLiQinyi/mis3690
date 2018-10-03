@@ -1,5 +1,3 @@
-fin = open("words.txt")
-
 
 # counter = 0
 # for line in fin:
@@ -41,62 +39,59 @@ fin = open("words.txt")
 # print(has_no_e('College'))
 # print(has_no_e('Epslon'))
 
-def avoids(word, forbidden):
-    """
-    takes a word and a string of forbidden letters, and that returns True
-    if the word doesn’t use any of the forbidden letters.
-    """
-    for i in word:
-        if i in forbidden:
-            return False
-    return True
 
 
-print(avoids('Babson', 'ab'))
-print(avoids('College', 'ab'))
+# print(avoids('Babson', 'ab'))
+# print(avoids('College', 'ab'))
 
 
-def uses_only(word, available):
-    """
-    takes a word and a string of letters, and that returns True if the word
-    contains only letters in the list.
-    """
-    for i in word:
-        if i not in available:
-            return False
-        return True
+# def uses_only(word, available):
+#     """
+#     takes a word and a string of letters, and that returns True if the word
+#     contains only letters in the list.
+#     """
+    # for i in word:
+    #     if i not in available:
+    #         return False
+    #     return True
+    # counter = 0
+    # for line in fin:
+    #     word = line.strip()
+    #     if uses_all(word, 'a,e,i,o,u'):
+    #         counter +=1
+    # return counter
+
+        
+
+# print(uses_only('Babson', 'aBbsonxyz'))
+# print(uses_only('college', 'aBbsonxyz'))
 
 
+# def uses_all(word, required):
+#     """
+#     takes a word and a string of required letters, and that returns True if
+#     the word uses all the required letters at least once.
+#     """
+#     for i in required:
+#         if i not in word:
+#             return False
+#     return True
 
-print(uses_only('Babson', 'aBbsonxyz'))
-print(uses_only('college', 'aBbsonxyz'))
-
-
-def uses_all(word, required):
-    """
-    takes a word and a string of required letters, and that returns True if
-    the word uses all the required letters at least once.
-    """
-    for i in required:
-        if i not in word:
-            return False
-    return True
-
-print(uses_all('Babson', 'abs'))
-print(uses_all('college', 'abs'))
+# print(uses_all('Babson', 'abs'))
+# print(uses_all('college', 'abs'))
 
 
 # def is_abecedarian(word):
-#     """
+#      """
 #     returns True if the letters in a word appear in alphabetical order
 #     (double letters are ok).
-#     """
-#     a = word[0]
-#     for i in word:
-#         if i < a:
-#             return False
-#         a = c
-#     return True
+    # """
+    # a = word[0]
+    # for i in word:
+    #     if i < a:
+    #         return False
+    #     a = c
+    # return True
 
         
 
@@ -105,19 +100,29 @@ print(uses_all('college', 'abs'))
 # print(is_abecedarian('college'))
 
 def is_abecedarian(word):
-    # n = 0
-    # a = word[n]
-    # b = word[n+1]
-    # while n < len(word):
-    #     if a > b:
-    #         return False
-    #         n =+1
-    # return True
+   
+    n = 0
+    a = word[n]
+    b = word[n+1]
+    while n < len(word):
+        if a > b:
+            return False
+            n=+1
+    return True
     if word[0] > word[1]:
         return False 
     return is_abecedarian(word[1:])
     
 
-print(is_abecedarian('abs'))
-print(is_abecedarian('college'))
-
+# print(is_abecedarian('abs'))
+# print(is_abecedarian('college'))
+def find_abe():
+    counter = 0
+    fin = open('words.txt')
+    for line in fin:
+        word = line.strip()
+        if is_abecedarian(word):
+            print (word)
+            counter += 1
+    return counter
+print(find_abe())
