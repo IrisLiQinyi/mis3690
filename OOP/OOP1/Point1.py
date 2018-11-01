@@ -6,7 +6,7 @@ class Point:
     attributes: x, y
     """
 # jack = Point()
-# # print(type(jack))
+# print(type(jack))
 # jack.x = 3
 # jack.y = 4
 # print(jack.x,jack.y)
